@@ -1,0 +1,11 @@
+{% load cart_tag %}
+
+Total Length :: {{request.session.cart|length}}
+
+Cart Detail::
+{% for key,value in request.session.cart.items %}
+    <img src="{{value.image}}" width="120" height="80"><br>
+    {{value.item}}<br>
+    {{value.price}} <br>
+    {{value.quantity}}  <br>
+{% endfor %}

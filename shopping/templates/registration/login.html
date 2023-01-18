@@ -1,0 +1,14 @@
+{% extends 'theme.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_filters %}
+    <section>
+        <div class="container">
+           <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" class="btn btn-dark btn-block" value="Login"/>
+        </form>
+        </div>
+    </section>
+{% endblock %}
